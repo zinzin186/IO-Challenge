@@ -17,4 +17,4 @@ I make a basic app that uses Google Map API to request the direction, distance a
   </tr>
 </table>
 
-Deno at: https://appetize.io/app/d9bwhantrfm0ry9d447t80d0q0
+Demo: https://appetize.io/app/d9bwhantrfm0ry9d447t80d0q0
