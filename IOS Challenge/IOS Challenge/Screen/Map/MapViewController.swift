@@ -39,7 +39,6 @@ class MapViewController: UIViewController {
     private var toMarker: GMSMarker?
     
     private var currentRoutePolyline = [GMSPolyline]()
-    private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,19 +67,6 @@ class MapViewController: UIViewController {
         optionMapView?.rightAnchor.constraint(equalTo: self.containerView.rightAnchor).isActive = true
         optionMapView?.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor).isActive = true
     }
-    private func getCurrentLocation(){
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined, .restricted, .denied:
-//                self.showAlertWhenDisableGPS()
-                break
-            case .authorizedAlways, .authorizedWhenInUse:
-                checkLocationAuthorizationStatus()
-            @unknown default:
-                break
-            }
-        }
-    }
     
     private func showAlertWhenDisableGPS(){
         let alert = UIAlertController(title: "", message: "Ứng dụng không xác định được vị trí của bạn. Vui lòng vào cài đặt để bật định vị", preferredStyle: .alert)
@@ -108,28 +94,17 @@ class MapViewController: UIViewController {
     }
 
     
-    func checkLocationAuthorizationStatus() {
-        locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 200
-        locationManager.startUpdatingLocation()
+    private func getCurrentLocation() {
+        LocationManager.shared.getCurrentLocation {[weak self] (location) in
+            guard let strongSelf = self else {return}
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            strongSelf.mapView.camera = GMSCameraPosition(latitude: latitude, longitude: longitude, zoom: strongSelf.cameraZoom)
+        }
     }
     
 }
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.count)
-        let userLocation = locations.first!
-        let latitude = userLocation.coordinate.latitude
-        let longitude = userLocation.coordinate.longitude
-        mapView.camera = GMSCameraPosition(latitude: latitude, longitude: longitude, zoom: cameraZoom)
-        manager.stopUpdatingLocation()
-        print("latitude = \(latitude) and longitude = \(longitude)")
-        
-    }
-    
-}
+
 extension MapViewController: OptionMapDelegate{
     func showDirection(travelMode: TravelModes) {
         self.currentTravelMode = travelMode

@@ -54,7 +54,7 @@
                                 <action selector="revertDirection:" destination="-1" eventType="touchUpInside" id="ath-qJ-teF"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-y2-K8a">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="origin location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-y2-K8a">
                             <rect key="frame" x="62.5" y="339" width="267.5" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="f0D-FZ-Gqa"/>
@@ -68,7 +68,7 @@
                                 <action selector="gotoSearchFromLocation:" destination="-1" eventType="touchUpInside" id="Y2t-Pz-B6A"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-DN-lnq">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="destination location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-DN-lnq">
                             <rect key="frame" x="62.5" y="389" width="267.5" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>

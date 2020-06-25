@@ -31,8 +31,6 @@ class UserViewModel: NSObject{
     private func getResultPlacesBySearch(keyword: String){
         GoogleMapApi.shared.getListAddresBySearch(keyword: keyword) {[weak self] (_listPlaces) in
             guard let strongSelf = self, let listPlaces = _listPlaces else {return}
-            print("text: \(keyword)")
-            print(listPlaces.count)
             strongSelf.searchResult.accept(listPlaces)
         }
     }

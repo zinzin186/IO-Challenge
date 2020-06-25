@@ -16,9 +16,7 @@ protocol CustomMapViewDelegate: class {
 
 class CustomMapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
-    private let locationManager = CLLocationManager()
     private let cameraZoom: Float = 15
-    
     weak var delegate: CustomMapViewDelegate?
     
     
@@ -43,42 +41,20 @@ class CustomMapViewController: UIViewController {
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(gotoSearch))
         self.navigationItem.rightBarButtonItem = searchButton
     }
+    private func getCurrentLocation() {
+        LocationManager.shared.getCurrentLocation {[weak self] (location) in
+            guard let strongSelf = self else {return}
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            strongSelf.mapView.camera = GMSCameraPosition(latitude: latitude, longitude: longitude, zoom: strongSelf.cameraZoom)
+        }
+    }
     @objc private func gotoSearch(){
         self.navigationController?.popViewController(animated: true)
     }
-   private func getCurrentLocation(){
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined, .restricted, .denied:
-                break
-            case .authorizedAlways, .authorizedWhenInUse:
-                checkLocationAuthorizationStatus()
-            @unknown default:
-                    break
-            }
-        }
-    }
-    func checkLocationAuthorizationStatus() {
-        locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 200
-        locationManager.startUpdatingLocation()
-    }
+   
 }
-extension CustomMapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.count)
-        let userLocation = locations.first!
-        let latitude = userLocation.coordinate.latitude
-        let longitude = userLocation.coordinate.longitude
-        mapView.camera = GMSCameraPosition(latitude: latitude, longitude: longitude, zoom: cameraZoom)
-        manager.stopUpdatingLocation()
-        print("latitude = \(latitude) and longitude = \(longitude)")
-        
-    }
-    
-}
+
 extension CustomMapViewController: GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         ShowViewFromWindow.shared.showListPlace(lat: coordinate.latitude, long: coordinate.longitude, mapView: mapView) { (place) in

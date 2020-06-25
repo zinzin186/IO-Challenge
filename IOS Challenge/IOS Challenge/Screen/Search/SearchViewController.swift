@@ -42,6 +42,9 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     private func loadHistorySearch(){
         let listCurrentPlaces = database.objects(PlaceModel.self)
         self.userViewModel.searchResult.accept(Array(listCurrentPlaces))
@@ -50,12 +53,12 @@ class SearchViewController: UIViewController {
         [searchOptionView, mapOptionView, tableView].forEach {(view) in
             view?.layer.borderColor = ColorConfig.borderColor.cgColor
             view?.layer.borderWidth = 1.0
-            
         }
-        tableView.layer.cornerRadius = 5.0
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: self.cellId)
-        tableView.separatorStyle = .none
+        self.tableView.isHidden = true
+        self.tableView.layer.cornerRadius = 5.0
+        self.tableView.delegate = self
+        self.tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: self.cellId)
+        self.tableView.separatorStyle = .none
     }
     private func bindUI(){
         self.bindTextField()
@@ -64,8 +67,8 @@ class SearchViewController: UIViewController {
     }
     private func bindTextField(){
         self.searchTextField
-        .rx.text // Observable property thanks to RxCocoa
-        .orEmpty // Make it non-optional
+        .rx.text
+        .orEmpty
         .subscribe(onNext: { [unowned self] query in
             if !query.isEmpty{
                 self.isSearching = true
@@ -76,6 +79,9 @@ class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         self.searchTextField.rx.text.orEmpty.debounce(.milliseconds(300), scheduler: MainScheduler.instance).asObservable().bind(to: self.userViewModel.searchInput).disposed(by: disposeBag)
         self.userViewModel.searchResult.asObservable().bind(to: tableView.rx.items) {[unowned self](tableView, row, element) in
+            if self.tableView.isHidden{
+                self.tableView.isHidden = false
+            }
             let indexPath = IndexPath(row: row, section: 0)
             let cell = tableView.dequeueReusableCell(withIdentifier: self.cellId, for: indexPath) as! SearchTableViewCell
             cell.nameLabel.text = element.name
@@ -83,7 +89,6 @@ class SearchViewController: UIViewController {
             cell.setImageForIcon(image: UIImage(named: iconName))
             cell.addressLabel.text = element.address
             return cell
-
             }
         .disposed(by: disposeBag)
     }

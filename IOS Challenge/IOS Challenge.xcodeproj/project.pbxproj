@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		074863D1B1B48644ABBEAD8B /* Pods_IOS_Challenge_IOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D998351D4152AB1B2CE1B26 /* Pods_IOS_Challenge_IOS_ChallengeUITests.framework */; };
+		961B356C24A47B5900A9D427 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B356B24A47B5900A9D427 /* LocationManager.swift */; };
 		962EF8B324A434FF0060EA42 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF8B224A434FF0060EA42 /* UIImageViewExtension.swift */; };
 		962EF8B724A437500060EA42 /* NearPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962EF8B624A437500060EA42 /* NearPlaceView.swift */; };
 		962EF8B924A4376D0060EA42 /* NearPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962EF8B824A4376D0060EA42 /* NearPlaceView.xib */; };
@@ -76,6 +77,7 @@
 		430D66CF6224982DC61A4913 /* Pods-IOS ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-IOS ChallengeTests/Pods-IOS ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		563BC243B225C8732B2B20E8 /* Pods-IOS Challenge-IOS ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Challenge-IOS ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-IOS Challenge-IOS ChallengeUITests/Pods-IOS Challenge-IOS ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71F2C43ECE1F6A79F1B2F883 /* Pods-IOS ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-IOS ChallengeTests/Pods-IOS ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		961B356B24A47B5900A9D427 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		962EF8B224A434FF0060EA42 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		962EF8B624A437500060EA42 /* NearPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlaceView.swift; sourceTree = "<group>"; };
 		962EF8B824A4376D0060EA42 /* NearPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearPlaceView.xib; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			children = (
 				969CE31324A3D41500C1EDC6 /* DirectionModel */,
 				965803F224A2769400143F09 /* GoogleMapApi.swift */,
+				961B356B24A47B5900A9D427 /* LocationManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				969CE31F24A3D8DC00C1EDC6 /* Polyline.swift in Sources */,
 				965803E624A25C3700143F09 /* GoogleConfig.swift in Sources */,
 				965803F624A27B3000143F09 /* SearchTableViewCell.swift in Sources */,
+				961B356C24A47B5900A9D427 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
