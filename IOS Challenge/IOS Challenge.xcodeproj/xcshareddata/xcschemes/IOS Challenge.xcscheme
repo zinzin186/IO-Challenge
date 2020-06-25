@@ -37,6 +37,11 @@
                BlueprintName = "IOS ChallengeTests"
                ReferencedContainer = "container:IOS Challenge.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "IOS_ChallengeTests/testPerformanceExample()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

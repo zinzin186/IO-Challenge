@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 enum TravelModes: String {
     case car = "driving"
@@ -61,7 +63,7 @@ class OptionMapView: UIView{
     private let paddingCell: CGFloat = 0
     private var currentTravelMode = TravelModes.car
     weak var delegate: OptionMapDelegate?
-    
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -85,6 +87,7 @@ class OptionMapView: UIView{
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
+    
     private func setupView(){
         self.revertButton.isSelected = false
         [fromLocationTextField, toLocationTextField].forEach { (textField) in

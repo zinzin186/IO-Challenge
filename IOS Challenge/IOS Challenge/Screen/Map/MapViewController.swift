@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-
+import SwiftyJSON
 
 class MapViewController: UIViewController {
 
@@ -67,7 +67,7 @@ class MapViewController: UIViewController {
         optionMapView?.rightAnchor.constraint(equalTo: self.containerView.rightAnchor).isActive = true
         optionMapView?.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor).isActive = true
     }
-    
+
     private func showAlertWhenDisableGPS(){
         let alert = UIAlertController(title: "", message: "Ứng dụng không xác định được vị trí của bạn. Vui lòng vào cài đặt để bật định vị", preferredStyle: .alert)
         let settingAction = UIAlertAction(title: "Cài đặt", style: .default) {[weak self] (_) in

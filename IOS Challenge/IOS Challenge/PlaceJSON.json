@@ -1,0 +1,37 @@
+{
+    "html_attributions": [ ],
+  "results":[
+     {
+       "formatted_address": "Hà Nội, Hoàn Kiếm, Hà Nội, Việt Nam",
+       "geometry": {
+           "location": {
+                "lat": 21.0277644,
+                "lng": 105.8341598
+           },
+           "viewport": {
+               "northeast": {
+                   "lat": 21.0503801,
+                   "lng": 105.8764459
+               }
+           }
+       },
+       "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+       "id": "8d629878fcede53ac23cae0c898aff1e1a98bf61",
+       "name": "Hà Nội",
+       "photos": [
+       {
+       "height": 600,
+       "html_attributions": [],
+       "photo_reference": "CmRaAAAA8G3qhLqeqtim5KEQH_ly_V8ZZSPUY84fFfb1UZraL68Qy-PsLNBwnOcvKNbUPQsAE_t3yurJ0JPCbvIGsVgaRBg7BrIWM0h3fztwJIQTQDTDCtW09SUTHQe-s_huErU_EhBl0dHf_-2koWzWTSWeK9gEGhT219SeA75gtq39CQuodMYRQnifgg",
+       "width": 800
+       }
+       ],
+       "place_id": "ChIJoRyG2ZurNTERqRfKcnt_iOc",
+       "reference": "ChIJoRyG2ZurNTERqRfKcnt_iOc",
+       "types": [
+       "locality",
+       "political"
+       ]
+     }
+  ]
+}

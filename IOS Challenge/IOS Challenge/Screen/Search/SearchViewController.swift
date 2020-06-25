@@ -35,6 +35,7 @@ class SearchViewController: UIViewController {
         self.setupView()
         self.bindUI()
         self.loadHistorySearch()
+        self.setupNavi()
         
     }
 
@@ -44,6 +45,10 @@ class SearchViewController: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    private func setupNavi(){
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     private func loadHistorySearch(){
         let listCurrentPlaces = database.objects(PlaceModel.self)
@@ -159,5 +164,10 @@ extension SearchViewController: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return isSearching ? 0:50
+    }
+}
+extension SearchViewController:UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

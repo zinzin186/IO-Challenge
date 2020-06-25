@@ -48,6 +48,9 @@
 		969CE32324A3F26500C1EDC6 /* CustomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CE32124A3F26500C1EDC6 /* CustomMapViewController.swift */; };
 		969CE32424A3F26500C1EDC6 /* CustomMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969CE32224A3F26500C1EDC6 /* CustomMapViewController.xib */; };
 		969CE32624A3FAE500C1EDC6 /* ShowViewFromWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CE32524A3FAE500C1EDC6 /* ShowViewFromWindow.swift */; };
+		96AE4D0B24A4FC2600D46A6F /* OptionMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE4D0A24A4FC2600D46A6F /* OptionMapViewTests.swift */; };
+		96E7E6C824A50DE500DFE796 /* GoogleApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7E6C724A50DE500DFE796 /* GoogleApiTests.swift */; };
+		96E7E6CA24A5119000DFE796 /* PlaceJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 96E7E6C924A5119000DFE796 /* PlaceJSON.json */; };
 		A3A0B509854B62F602C48C94 /* Pods_IOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3325EDE6113D4FBA4D7BFFB7 /* Pods_IOS_Challenge.framework */; };
 		FDF5733D423DE4CBCCFDD0CD /* Pods_IOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52AAF9C203953DA9905E196 /* Pods_IOS_ChallengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +126,9 @@
 		969CE32124A3F26500C1EDC6 /* CustomMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapViewController.swift; sourceTree = "<group>"; };
 		969CE32224A3F26500C1EDC6 /* CustomMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMapViewController.xib; sourceTree = "<group>"; };
 		969CE32524A3FAE500C1EDC6 /* ShowViewFromWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewFromWindow.swift; sourceTree = "<group>"; };
+		96AE4D0A24A4FC2600D46A6F /* OptionMapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMapViewTests.swift; sourceTree = "<group>"; };
+		96E7E6C724A50DE500DFE796 /* GoogleApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleApiTests.swift; sourceTree = "<group>"; };
+		96E7E6C924A5119000DFE796 /* PlaceJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlaceJSON.json; sourceTree = "<group>"; };
 		9D998351D4152AB1B2CE1B26 /* Pods_IOS_Challenge_IOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Challenge_IOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52AAF9C203953DA9905E196 /* Pods_IOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -219,6 +225,7 @@
 				965803B024A23D2C00143F09 /* ViewController.swift */,
 				965803B224A23D2C00143F09 /* Main.storyboard */,
 				965803B824A23D3000143F09 /* Assets.xcassets */,
+				96E7E6C924A5119000DFE796 /* PlaceJSON.json */,
 				965803BA24A23D3000143F09 /* LaunchScreen.storyboard */,
 				965803BD24A23D3000143F09 /* Info.plist */,
 				965803B524A23D2C00143F09 /* IOS_Challenge.xcdatamodeld */,
@@ -229,6 +236,8 @@
 		965803C524A23D3000143F09 /* IOS ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				96E7E6C424A50C0600DFE796 /* SupportingFile */,
+				96AE4D0924A4FC0700D46A6F /* Case */,
 				965803C624A23D3000143F09 /* IOS_ChallengeTests.swift */,
 				965803C824A23D3000143F09 /* Info.plist */,
 			);
@@ -334,6 +343,22 @@
 				962EF8BB24A43A040060EA42 /* NearPlaceTableViewCell.xib */,
 			);
 			path = CustomMap;
+			sourceTree = "<group>";
+		};
+		96AE4D0924A4FC0700D46A6F /* Case */ = {
+			isa = PBXGroup;
+			children = (
+				96AE4D0A24A4FC2600D46A6F /* OptionMapViewTests.swift */,
+				96E7E6C724A50DE500DFE796 /* GoogleApiTests.swift */,
+			);
+			path = Case;
+			sourceTree = "<group>";
+		};
+		96E7E6C424A50C0600DFE796 /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +481,7 @@
 				969CE30A24A3A0F800C1EDC6 /* OptionCollectionViewCell.xib in Resources */,
 				962EF8B924A4376D0060EA42 /* NearPlaceView.xib in Resources */,
 				965803E324A2581E00143F09 /* MapViewController.xib in Resources */,
+				96E7E6CA24A5119000DFE796 /* PlaceJSON.json in Resources */,
 				969CE32424A3F26500C1EDC6 /* CustomMapViewController.xib in Resources */,
 				965803F724A27B3000143F09 /* SearchTableViewCell.xib in Resources */,
 			);
@@ -653,7 +679,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96AE4D0B24A4FC2600D46A6F /* OptionMapViewTests.swift in Sources */,
 				965803C724A23D3000143F09 /* IOS_ChallengeTests.swift in Sources */,
+				96E7E6C824A50DE500DFE796 /* GoogleApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,7 +850,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS Challenge/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,7 +870,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS Challenge/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS ChallengeTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -886,7 +914,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS ChallengeTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -908,6 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS ChallengeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -929,6 +958,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5RRSZ87US2;
 				INFOPLIST_FILE = "IOS ChallengeUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
