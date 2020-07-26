@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = navi
         self.window?.makeKeyAndVisible()
-        print("this is ver 1")
+        print("this is ver 2")
         return true
     }
 
